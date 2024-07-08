@@ -1,0 +1,13 @@
+# dependencies
+node_modules
+
+# misc
+.vscode
+.idea
+.DS_Store
+
+# debug
+yarn-error.log
+
+# typescript
+*.tsbuildinfo
