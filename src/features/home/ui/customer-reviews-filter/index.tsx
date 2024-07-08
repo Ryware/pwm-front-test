@@ -2,7 +2,7 @@ import { Box, Stack } from "@mui/material";
 import React from "react";
 import { CUSTOM_REVIEWS_VALUES } from "@/constants";
 import { Rating } from "@/ui";
-import { filterByReview, setRatingValue } from "@/store/slices/products";
+import { setRatingValue } from "@/store/slices/products";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store";
 
@@ -18,7 +18,6 @@ export const CustomerReviewsFilter = () => {
       dispatch(setRatingValue(null));
     } else {
       dispatch(setRatingValue(value));
-      dispatch(filterByReview(value));
     }
   };
 

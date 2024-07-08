@@ -5,14 +5,14 @@ import {
   AccordionSummary,
   Box,
   Card,
-  Grid,
   Stack,
   Typography,
 } from "@mui/material";
 import { RangeSlider } from "@/ui";
 import { AppDispatch, RootState } from "@/store";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts, initialState } from "@/store/slices/products";
+import { fetchProducts } from "@/store/slices/products";
+import { initialState } from "@/store/slices/products/initial-state";
 import { CustomerReviewsFilter, ProductsList, SelectSort } from "./ui";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
@@ -63,15 +63,8 @@ export const HomePage: React.FC = () => {
 
       <Stack sx={{ flex: "6" }}>
         <Card sx={{ padding: "16px" }}>
-          <Box sx={{ mb: "40px" }}>
-            <SelectSort />
-          </Box>
-
-          <Box>
-            <Grid container spacing={2}>
-              <ProductsList data={products} />
-            </Grid>
-          </Box>
+          <SelectSort sx={{ mb: "40px" }} />
+          <ProductsList data={products} />
         </Card>
       </Stack>
     </Stack>

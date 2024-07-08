@@ -4,7 +4,8 @@ import Box from "@mui/material/Box";
 import styled from "@emotion/styled";
 import { AppDispatch, RootState } from "@/store";
 import { useDispatch, useSelector } from "react-redux";
-import { filterByPriceRange, initialState } from "@/store/slices/products";
+import { filterByPriceRange } from "@/store/slices/products";
+import { initialState } from "@/store/slices/products/initial-state";
 
 interface RangeSliderProps {
   min: number;

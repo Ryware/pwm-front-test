@@ -1,4 +1,4 @@
-import { ProductsState } from "@/store/slices/watch/types";
+import { ProductsState } from "@/store/slices/products/types";
 
 export const initialState: ProductsState = {
   products: [],

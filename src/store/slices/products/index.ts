@@ -17,22 +17,6 @@ const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    sortByCheapest: (state) => {
-      state.sortBy = "cheapest";
-      applyFiltersAndSort(state);
-    },
-    sortByMostExpensive: (state) => {
-      state.sortBy = "mostExpensive";
-      applyFiltersAndSort(state);
-    },
-    sortByTopRated: (state) => {
-      state.sortBy = "topRated";
-      applyFiltersAndSort(state);
-    },
-    filterByReview: (state, action: PayloadAction<number>) => {
-      state.ratingValue = action.payload;
-      applyFiltersAndSort(state);
-    },
     setRatingValue: (state, action: PayloadAction<number | null>) => {
       state.ratingValue = action.payload;
       applyFiltersAndSort(state);
@@ -68,16 +52,8 @@ const productsSlice = createSlice({
   },
 });
 
-export const {
-  sortByCheapest,
-  sortByMostExpensive,
-  sortByTopRated,
-  filterByReview,
-  setSearchValue,
-  filterByPriceRange,
-  setRatingValue,
-  setSortBy,
-} = productsSlice.actions;
+export const { setSearchValue, filterByPriceRange, setRatingValue, setSortBy } =
+  productsSlice.actions;
 
 export default productsSlice.reducer;
 
