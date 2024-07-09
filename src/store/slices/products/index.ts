@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { Options, Product } from "@/types";
-import { MOCK } from "@/types/product";
 import { initialState } from "./initial-state";
 import { ProductsState } from "./types";
 
@@ -9,7 +8,7 @@ export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
     const response = await axios.get("https://api.dev2.ahorse.top/api/items/");
-    return MOCK;
+    return response.data;
   },
 );
 

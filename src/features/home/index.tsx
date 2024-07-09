@@ -5,6 +5,7 @@ import {
   AccordionSummary,
   Box,
   Card,
+  Grid,
   Stack,
   Typography,
 } from "@mui/material";
@@ -15,15 +16,14 @@ import { fetchProducts } from "@/store/slices/products";
 import { initialState } from "@/store/slices/products/initial-state";
 import { CustomerReviewsFilter, ProductsList, SelectSort } from "./ui";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Loader } from "@/components/loader";
 
 export const HomePage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
   const products = useSelector(
     (state: RootState) => state.products.filteredProducts,
   );
-
-  // const loading = useSelector((state: RootState) => state.products.loading);
-  // const error = useSelector((state: RootState) => state.products.error);
+  const loading = useSelector((state: RootState) => state.products.loading);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -64,7 +64,14 @@ export const HomePage: React.FC = () => {
       <Stack sx={{ flex: "6" }}>
         <Card sx={{ padding: "16px" }}>
           <SelectSort sx={{ mb: "40px" }} />
-          <ProductsList data={products} />
+
+          <Grid container spacing={2}>
+            {loading ? (
+              <Loader size="large" />
+            ) : (
+              <ProductsList data={products} />
+            )}
+          </Grid>
         </Card>
       </Stack>
     </Stack>

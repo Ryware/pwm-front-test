@@ -18,7 +18,7 @@ export const WatchPage: FC = () => {
   };
 
   return (
-    <Box sx={{ marginTop: "64px" }} width="100%">
+    <Box sx={{ my: "64px" }} width="100%">
       <Grid container spacing={2}>
         {watchList.map((product) => (
           <Grid item xs={12} sm={12} md={6} lg={3} key={product.id}>

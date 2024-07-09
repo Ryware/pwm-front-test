@@ -37,7 +37,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       <CardMedia
         component="img"
         height="224"
-        image={"http://via.placeholder.com/360x360" || product.image}
+        image={"https://via.placeholder.com/224x224" || product.image}
         alt={product.name}
       />
       <Typography height="74px" variant="body1" color="#19191D" my="8px">
