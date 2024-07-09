@@ -7,7 +7,9 @@ import { ProductsState } from "./types";
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
-    const response = await axios.get("https://api.dev2.ahorse.top/api/items/");
+    const response = await axios.get(
+      "https://itemapi-bkmhaqlsla-zf.a.run.app/api/items/",
+    );
     return response.data;
   },
 );
