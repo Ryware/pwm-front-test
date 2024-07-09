@@ -38,7 +38,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       <CardMedia
         component="img"
         height="224"
-        image={placeholder || product.image}
+        image={product.image || placeholder}
         alt={product.name}
       />
       <Typography height="74px" variant="body1" color="#19191D" my="8px">

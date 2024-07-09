@@ -1,15 +1,8 @@
 import React, { FC } from "react";
-import { Container, Stack, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import { Button } from "@/ui";
+import { Container } from "@mui/material";
+import { Description } from "@/components/description";
 
 export const NotFoundPage: FC = () => {
-  const navigate = useNavigate();
-
-  const navigateToHome = () => {
-    navigate("/");
-  };
-
   return (
     <Container
       sx={{
@@ -21,14 +14,7 @@ export const NotFoundPage: FC = () => {
         alignItems: "center",
       }}
     >
-      <Stack alignItems="center" sx={{ marginTop: "64px" }}>
-        <Typography variant="h2" color="textPrimary" gutterBottom>
-          404 Not Found
-        </Typography>
-        <Button variant="outlined" size="large" onClick={navigateToHome}>
-          Go to Home
-        </Button>
-      </Stack>
+      <Description title="404 Not Found" />
     </Container>
   );
 };

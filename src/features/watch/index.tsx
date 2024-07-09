@@ -1,10 +1,11 @@
-import { Box, Grid } from "@mui/material";
 import React, { FC } from "react";
+import { Box, Grid } from "@mui/material";
 import { ProductCard } from "@/components/product-card";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store";
 import { addToWatchList } from "@/store/slices/watch";
 import { Product } from "@/types";
+import { Description } from "@/components/description";
 
 export const WatchPage: FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -17,7 +18,7 @@ export const WatchPage: FC = () => {
     dispatch(addToWatchList(product));
   };
 
-  return (
+  return !!watchList?.length ? (
     <Box sx={{ my: "64px" }} width="100%">
       <Grid container spacing={2}>
         {watchList.map((product) => (
@@ -27,5 +28,7 @@ export const WatchPage: FC = () => {
         ))}
       </Grid>
     </Box>
+  ) : (
+    <Description title="Empty" />
   );
 };
