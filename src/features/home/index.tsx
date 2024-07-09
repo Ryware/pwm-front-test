@@ -30,7 +30,12 @@ export const HomePage: React.FC = () => {
   }, [dispatch]);
 
   return (
-    <Stack direction="row" width="100%" spacing={4} sx={{ my: "64px" }}>
+    <Stack
+      direction={{ xs: "column", sm: "row" }}
+      width="100%"
+      spacing={4}
+      sx={{ my: "44px" }}
+    >
       <Stack sx={{ flex: "2" }} spacing={4}>
         <Box>
           <Typography variant="body1" sx={{ margin: "80px 0 16px" }}>
@@ -47,7 +52,7 @@ export const HomePage: React.FC = () => {
         </Box>
 
         <Box>
-          <Accordion defaultExpanded>
+          <Accordion defaultExpanded sx={{ minWidth: "180px" }}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography>CUSTOMERS REVIEWS</Typography>
             </AccordionSummary>
