@@ -28,7 +28,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         boxShadow: "none",
         padding: "16px 16px 12px",
         borderRadius: 2,
-        minWidth: 258,
         transition: "box-shadow 0.3s ease-in-out",
         "&:hover": {
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
